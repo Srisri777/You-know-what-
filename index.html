@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:'Segoe UI',sans-serif;
+  background:#000;
+  color:white;
+  overflow-x:hidden;
+}
+
+.page{display:none; min-height:100vh; padding:40px;}
+.page.active{display:block;}
+
+h1,h2{text-align:center;}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:30px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(255,255,255,0.15);
+  border-radius:25px;
+  padding:40px;
+  text-align:center;
+  cursor:pointer;
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+  min-height:260px;
+}
+.card:hover{transform:scale(1.05);}
+.locked{opacity:0.5; cursor:not-allowed;}
+
+.timer{margin-top:15px; font-size:18px; color:#ffb6c1;}
+.comeback{font-size:16px; margin-top:5px; color:#ffd1dc;}
+
+.back{
+  display:inline-block;
+  margin-top:30px;
+  cursor:pointer;
+  font-size:20px;
+}
+
+.content{
+  max-width:900px;
+  margin:auto;
+  font-size:22px;
+  line-height:1.8;
+  background:rgba(0,0,0,0.55);
+  padding:40px;
+  border-radius:30px;
+}
+
+audio{width:100%; margin-top:25px;}
+
+.bg{
+  background-size:cover;
+  background-position:center;
+}
+
+button{
+  padding:15px 35px;
+  font-size:20px;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+#noBtn{position:absolute;}
+</style>
+</head>
+
+<body>
+
+<!-- HOME -->
+<div class="page active" id="home" style="background:url('homebg.jpg') center/cover">
+<h1>For You ❤️</h1>
+<h2>My Valentine Week, just for you</h2>
+
+<div class="cards">
+  <div class="card" onclick="openPage('rose')" id="card-rose">
+    🌹 Rose Day
+    <div class="timer" id="timer-rose"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('propose')" id="card-propose">
+    💍 Propose Day
+    <div class="timer" id="timer-propose"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('chocolate')" id="card-chocolate">
+    🍫 Chocolate Day
+    <div class="timer" id="timer-chocolate"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('teddy')" id="card-teddy">
+    🧸 Teddy Day
+    <div class="timer" id="timer-teddy"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('promise')" id="card-promise">
+    🤞 Promise Day
+    <div class="timer" id="timer-promise"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('hug')" id="card-hug">
+    🤗 Hug Day
+    <div class="timer" id="timer-hug"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('kiss')" id="card-kiss">
+    😘 Kiss Day
+    <div class="timer" id="timer-kiss"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+
+  <div class="card" onclick="openPage('valentine')" id="card-valentine">
+    ❤️ Valentine Day
+    <div class="timer" id="timer-valentine"></div>
+    <div class="comeback">Come back honey ❤️</div>
+  </div>
+</div>
+</div>
+
+<!-- ROSE DAY -->
+<div class="page bg" id="rose" style="background-image:url('sunflower.jpg')">
+<h2>Rose Day 🌹</h2>
+<div class="content">
+Baby, if I could hold a rose every time I thought of you, my hands would never be empty.
+You have this quiet magic — the kind that doesn’t shout but stays.
+The way you exist in my life feels gentle and certain, like something that was always meant to be.
+You don’t just make me smile; you make me feel understood.
+On this Rose Day, I don’t give you a flower —
+I give you the part of my heart that blooms because of you.
+<p>— always yours 💕</p>
+<audio controls src="songrose.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- PROPOSE DAY -->
+<div class="page bg" id="propose" style="background-image:url('queenmansion.jpg')">
+<h2>Propose Day 💍</h2>
+<div class="content">
+Bangaram, this isn’t a dramatic proposal with big speeches,
+it’s something deeper and calmer.
+It’s me choosing you in the small moments —
+in silence, in chaos, in comfort.
+I don’t promise perfection, but I promise presence.
+I want to walk through life knowing that wherever I am,
+your hand is the one I’m reaching for. 🫴
+<audio controls src="songpropose.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- CHOCOLATE -->
+<div class="page bg" id="chocolate" style="background-image:url('dosa.jpg')">
+<h2>Chocolate Day 🍫</h2>
+<div class="content">
+Potti, people say chocolate is sweet,
+but they haven’t seen the way you smile when you’re happy,
+or the way you care without asking.
+You add flavor to my life without even trying.
+Every ordinary moment with you feels richer,
+and every bad day feels lighter.
+If love had a taste,
+it would taste like comfort, warmth, and you.
+(Not only chocolate, but also chocolate flavour too...ykiyk 😁)
+<audio controls src="songchocolate.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- TEDDY -->
+<div class="page bg" id="teddy" style="background-image:url('sheep.jpg')">
+<h2>Teddy Day 🧸</h2>
+<div class="content">
+Jagi, some days the world feels heavy,
+and all anyone really needs is comfort.
+If I could, I’d turn into a place where you can rest —
+no expectations, no pressure, just peace.
+I want to be the person you lean on when things feel too much,
+and the one who stays even when words run out.
+With you, comfort feels natural, my cute teddy. 😘🐻
+<audio controls src="songteddy.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- PROMISE -->
+<div class="page bg" id="promise" style="background-image:url('guavas.jpg')">
+<h2>Promise Day 🤞</h2>
+<div class="content">
+I promise effort even on tired days.
+I promise honesty even when it’s hard.
+I promise to listen, to learn, and to grow —
+not perfectly, but sincerely.
+Life won’t always be smooth,
+but I promise you won’t walk it alone.
+This isn’t a promise for today —
+it’s for every tomorrow we face together. 
+<audio controls src="songpromise.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- HUG -->
+<div class="page bg" id="hug" style="background-image:url('aliabhatt.jpg')">
+<h2>Hug Day 🤗</h2>
+<div class="content">
+Some hugs don’t need words.
+They say “I’m here”, “You’re safe”, “You matter”.
+If I could wrap my arms around you right now,
+I’d want you to feel everything I struggle to say —
+that you are loved deeply, quietly, and truly.
+May every hug from me always feel like home. 🤗
+<audio controls src="songhug.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- KISS -->
+<div class="page bg" id="kiss" style="background-image:url('sunflower.jpg')">
+<h2>Kiss Day 😘</h2>
+<div class="content">
+A kiss isn’t just closeness —
+it’s trust, comfort, and choosing each other in silence.
+It’s that moment where the world pauses,
+and all that exists is us.
+Every kiss I imagine carries warmth,
+respect, and the promise of staying.
+With you, even the quiet moments feel intimate. 😗😙😚😘
+<audio controls src="songkiss.mp3"></audio>
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<!-- VALENTINE -->
+<div class="page bg" id="valentine" style="background-image:url('queenmansion.jpg')">
+<h2>Valentine Day ❤️</h2>
+<div class="content">
+<h3>Janu...</h3>
+Loving you feels effortless.
+You walked into my life and made ordinary days meaningful.
+With you, laughter feels lighter and silence feels safe.
+I don’t want a perfect story —
+I want a real one, with you beside me.
+
+So here I am, heart open and honest,
+asking you something simple but true:
+
+Will you be my Valentine?
+Not just today —
+but in all the little tomorrows we haven’t lived yet. 💍
+<h2>Will you be my Valentine?</h2>
+
+<button onclick="yes()">Yes ❤️</button>
+<button id="noBtn">No</button>
+
+<div class="back" onclick="openPage('home')">⬅ Back</div>
+</div>
+</div>
+
+<script>
+const days = {
+ rose: new Date('2026-02-07T00:00:00'),
+ propose: new Date('2026-02-08T00:00:00'),
+ chocolate: new Date('2026-02-09T00:00:00'),
+ teddy: new Date('2026-02-10T00:00:00'),
+ promise: new Date('2026-02-11T00:00:00'),
+ hug: new Date('2026-02-12T00:00:00'),
+ kiss: new Date('2026-02-13T00:00:00'),
+ valentine: new Date('2026-02-14T00:00:00')
+};
+
+function canOpen(id){
+ if(!days[id]) return true;
+ return new Date() >= days[id];
+}
+
+function openPage(id){
+ if(!canOpen(id)){alert("Come back honey ❤️"); return;}
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+
+function updateTimers(){
+ for(let d in days){
+   let diff = days[d]-new Date();
+   let el=document.getElementById("timer-"+d);
+   let card=document.getElementById("card-"+d);
+   if(diff>0){
+     let h=Math.floor(diff/3600000);
+     let m=Math.floor(diff%3600000/60000);
+     el.innerText=`Opens in ${h}h ${m}m`;
+     card.classList.add("locked");
+   } else {
+     el.innerText="Open ❤️";
+     card.classList.remove("locked");
+   }
+ }
+}
+setInterval(updateTimers,1000);
+updateTimers();
+
+const noBtn=document.getElementById("noBtn");
+noBtn.addEventListener("mouseover",()=>{
+ noBtn.style.left=Math.random()*70+"%";
+ noBtn.style.top=Math.random()*70+"%";
+});
+
+function yes(){alert("I knew it ❤️");}
+</script>
+
+</body>
+</html>
